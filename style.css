@@ -176,9 +176,9 @@ nav {
 }
 
 /* SECOND SECTION */
-.section2 {
-    height: 200vh;
-    position: relative;
+ .section2 {
+    margin-top: -100px;
+}
 
     display: flex;
     justify-content: center;
@@ -186,7 +186,7 @@ nav {
     /* PUSH CONTENT UP */
     align-items: flex-start;
 
-    padding-top: 120px; /* adjust this */
+    padding-top: 100px; /* adjust this */
 
     background: url("image/me.jpg") center/cover no-repeat;
 
