@@ -1,80 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Homepage</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filmmaker Portfolio</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background: #0a0a0a;
+    color: white;
+}
 
-        header {
-            background-color: #222;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1517602302552-471fe67acf66') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 
-        nav {
-            background-color: #444;
-            padding: 10px;
-            text-align: center;
-        }
+.hero h1 {
+    font-size: 4rem;
+    letter-spacing: 3px;
+    background: rgba(0,0,0,0.5);
+    padding: 20px 40px;
+}
 
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+/* NAV */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+    z-index: 1000;
+}
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+nav a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-        main {
-            padding: 40px;
-            text-align: center;
-        }
+/* SECTION */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
 
-        footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+/* SLIDER */
+.slider {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slides img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* BUTTONS */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+footer {
+    padding: 30px;
+    text-align: center;
+    background: #111;
+}
+</style>
 </head>
 
 <body>
 
-<header>
-    <h1>My Website</h1>
-    <p>Welcome to my homepage</p>
-</header>
-
 <nav>
     <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Projects</a>
+    <a href="#">Work</a>
     <a href="#">Contact</a>
 </nav>
 
-<main>
-    <h2>Home</h2>
-    <p>This is the main section of your homepage.</p>
-</main>
+<div class="hero">
+    <h1>Your Name</h1>
+</div>
+
+<div class="section">
+    <h2>My Work</h2>
+
+    <div class="slider">
+        <div class="slides" id="slides">
+            <img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+            <img src="https://images.unsplash.com/photo-1505685296765-3a2736de412f">
+            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728">
+        </div>
+
+        <button class="prev" onclick="moveSlide(-1)">❮</button>
+        <button class="next" onclick="moveSlide(1)">❯</button>
+    </div>
+</div>
 
 <footer>
-    <p>© 2026 My Website</p>
+    <p>© 2026 Your Name — Filmmaker</p>
 </footer>
+
+<script>
+let index = 0;
+
+function moveSlide(direction) {
+    const slides = document.getElementById('slides');
+    const total = slides.children.length;
+
+    index += direction;
+
+    if (index < 0) index = total - 1;
+    if (index >= total) index = 0;
+
+    slides.style.transform = `translateX(-${index * 100}%)`;
+}
+</script>
 
 </body>
 </html>
