@@ -182,8 +182,11 @@ nav {
 
     display: flex;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+
+    /* PUSH CONTENT UP */
+    align-items: flex-start;
+
+    padding-top: 120px; /* adjust this */
 
     background: url("image/me.jpg") center/cover no-repeat;
 
