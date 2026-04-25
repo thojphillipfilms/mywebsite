@@ -1,4 +1,4 @@
-R/* ========================= */
+/* ========================= */
 /* RESET */
 * {
     margin: 0;
@@ -167,60 +167,19 @@ p {
         font-size: 1.6rem;
     }
 
-    /* 🔥 THIS FIXES YOUR PROBLEM */
     .section2,
     .section3 {
         justify-content: flex-start;
         align-items: center;
-        padding-top: 120px;
-        background-position: top;
+        padding-top: 110px;
+        background-position: center;
     }
 
     .content {
-        padding: 0 20px;
-    }
-}
-
-/* ========================= */
-/* MOBILE (PHONES) */
-@media (max-width: 768px) {
-
-    /* NAVBAR */
-    nav {
-        padding: 15px 20px;
+        padding: 0 15px;
     }
 
-    .logo {
-        font-size: 0.9rem;
-    }
-
-    .links a {
-        margin-left: 15px;
-        font-size: 0.8rem;
-    }
-
-    /* HERO TEXT */
-    .hero h1 {
-        font-size: 1.8rem;
-        letter-spacing: 2px;
-    }
-
-    .hero p {
-        font-size: 0.9rem;
-    }
-
-    /* SECTIONS */
-    .section2,
-    .section3 {
-        padding-top: 80px;
-    }
-
-    .section2 h2,
-    .section3 h2 {
-        font-size: 1.5rem;
-    }
-
-    /* REDUCE ZOOM EFFECT (prevents weird cropping) */
+    /* turn off any weird zoom/animation issues */
     .hero {
         background-size: cover;
         animation: none;
