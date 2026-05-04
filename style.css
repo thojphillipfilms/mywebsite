@@ -9,6 +9,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 90px;
+    scroll-snap-type: y mandatory;
 }
 
 body {
@@ -79,6 +80,8 @@ section {
     position: relative;
     text-align: center;
     padding: 100px 20px;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 /* HERO SPACING */
