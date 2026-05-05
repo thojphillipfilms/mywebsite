@@ -54,16 +54,9 @@
         <!-- LEFT SIDE: IMAGE -->
 <div class="about-image">
 
-    <button class="arrow left" onclick="changeSlide(-1)">❮</button>
-
     <div class="image-slider">
         <img src="image/headshot.jpg" class="slide active" alt="Phillip Thao">
-        <img src="image/me2.JPG" class="slide" alt="Phillip Thao">
-        <img src="image/me3.png" class="slide" alt="Phillip Thao">
     </div>
-
-    <button class="arrow right" onclick="changeSlide(1)">❯</button>
-
 </div>
 
         <!-- RIGHT SIDE: TEXT -->
@@ -147,25 +140,5 @@ const bgObserver = new IntersectionObserver((entries) => {
 sections.forEach(section => bgObserver.observe(section));
 </script>
 
-<script>
-let currentSlide = 0;
-const slides = document.querySelectorAll(".slide");
-
-function changeSlide(direction) {
-    slides[currentSlide].classList.remove("active");
-
-    currentSlide += direction;
-
-    if (currentSlide < 0) {
-        currentSlide = slides.length - 1;
-    }
-
-    if (currentSlide >= slides.length) {
-        currentSlide = 0;
-    }
-
-    slides[currentSlide].classList.add("active");
-}
-    </script>
 </body>
 </html>
