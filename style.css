@@ -92,7 +92,7 @@ section {
 /* SECTION SPACING */
 .section2,
 .section3 {
-    padding-top: 50px;
+    padding-top: -100px;
 }
 
 /* ========================= */
@@ -166,7 +166,7 @@ p {
     }
 
     section {
-        padding: 90px 15px;
+        padding: 90px 25px;
     }
 
     h1 {
