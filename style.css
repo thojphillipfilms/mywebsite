@@ -89,10 +89,14 @@ section {
     padding-top: 300px;
 }
 
-/* SECTION SPACING */
 .section2,
 .section3 {
-    padding-top: -100px;
+    padding-top: 40px;
+}
+
+.section2 .content,
+.section3 .content {
+    margin-top: -60px;
 }
 
 /* ========================= */
