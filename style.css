@@ -101,7 +101,6 @@ section {
 .about-container {
     position: relative;
     z-index: 2;
-
     width: 90%;
     max-width: 1200px;
 
@@ -142,6 +141,54 @@ section {
 }
 
 .about-text p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* ========================= */
+/* WORK SECTION LAYOUT */
+
+.work-container {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 1400px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* LEFT SIDE VIDEO */
+.video-section {
+    flex: 1;
+}
+
+.video-section iframe {
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 16 / 9;
+
+    border: none;
+    border-radius: 16px;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+/* RIGHT SIDE TEXT */
+.work-text {
+    flex: 1;
+    text-align: left;
+}
+
+.work-text h2 {
+    margin-bottom: 20px;
+}
+
+.work-text p {
     margin-bottom: 20px;
     line-height: 1.7;
     font-size: 1rem;
@@ -194,54 +241,6 @@ p {
 .fade-section.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* ========================= */
-/* WORK SECTION LAYOUT */
-
-.work-container {
-    position: relative;
-    z-index: 2;
-
-    width: 90%;
-    max-width: 1400px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-}
-
-/* LEFT SIDE VIDEO */
-.video-section {
-    flex: 1;
-}
-
-.video-section iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9; /* horizontal format */
-
-    border: none;
-    border-radius: 16px;
-
-    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-}
-
-/* RIGHT SIDE TEXT */
-.work-text {
-    flex: 1;
-    text-align: left;
-}
-
-.work-text h2 {
-    margin-bottom: 20px;
-}
-
-.work-text p {
-    margin-bottom: 20px;
-    line-height: 1.7;
-    font-size: 1rem;
-    opacity: 0.9;
 }
 
 /* ========================= */
@@ -301,17 +300,18 @@ p {
         max-width: 280px;
     }
 
+    /* WORK SECTION MOBILE */
+    .work-container {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .work-text {
+        text-align: center;
+    }
+
     .content {
         padding: 0 15px;
     }
-}
-
-.work-container {
-    flex-direction: column;
-    gap: 30px;
-    text-align: center;
-}
-
-.work-text {
-    text-align: center;
 }
