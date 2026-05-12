@@ -85,83 +85,74 @@
     </div>
 </section>
 
-<!-- WORK SECTION -->
+<!-- Replace ONLY your current WORK SECTION with this -->
+
 <section id="work" class="section3">
     <div class="overlay"></div>
 
     <div class="work-container fade-section">
 
-        <!-- LEFT SIDE: VIDEOS STACKED -->
-        <div class="video-column">
+        <!-- TRAILER VIDEO -->
+        <div class="video-block">
+            <div class="video-wrapper">
+                <video
+                    id="trailerVideo"
+                    muted
+                    loop
+                    playsinline
+                    preload="auto"
+                    poster="image/trailer-thumbnail.jpg"
+                >
+                    <source src="video/trailer.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
 
-            <!-- TRAILER -->
-            <div class="video-block">
-                <div class="video-wrapper">
-                    <video
-                        id="trailerVideo"
-                        muted
-                        loop
-                        playsinline
-                        preload="auto"
-                        poster="image/trailer-thumbnail.jpg"
-                    >
-                        <source src="video/trailer.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-
-                    <button class="play-btn" onclick="toggleVideo('trailerVideo', this)">
-                        ▶
-                    </button>
-                </div>
+                <button class="play-btn" onclick="toggleVideo('trailerVideo', this)">
+                    ▶
+                </button>
             </div>
-
-            <!-- SHOWREEL -->
-            <div class="video-block">
-                <div class="video-wrapper">
-                    <video
-                        id="showreelVideo"
-                        muted
-                        loop
-                        playsinline
-                        preload="auto"
-                        poster="image/showreel-thumbnail.jpg"
-                    >
-                        <source src="video/showreel.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-
-                    <button class="play-btn" onclick="toggleVideo('showreelVideo', this)">
-                        ▶
-                    </button>
-                </div>
-            </div>
-
         </div>
 
-        <!-- RIGHT SIDE: DESCRIPTIONS -->
-        <div class="work-text-column">
+        <!-- TRAILER TEXT -->
+        <div class="work-text-block">
+            <h2>Short Film Trailer</h2>
+            <p>
+                A cinematic trailer for one of my narrative short films,
+                built around emotion, tension, and visual storytelling.
+                This project reflects my directing style and my focus on
+                atmosphere-driven filmmaking.
+            </p>
+        </div>
 
-            <!-- TRAILER DESCRIPTION -->
-            <div class="work-text-block">
-                <h2>Short Film Trailer</h2>
-                <p>
-                    A cinematic trailer for one of my narrative short films,
-                    built around emotion, tension, and visual storytelling.
-                    This project reflects my directing style and my focus on
-                    atmosphere-driven filmmaking.
-                </p>
+        <!-- SHOWREEL VIDEO -->
+        <div class="video-block">
+            <div class="video-wrapper">
+                <video
+                    id="showreelVideo"
+                    muted
+                    loop
+                    playsinline
+                    preload="auto"
+                    poster="image/showreel-thumbnail.jpg"
+                >
+                    <source src="video/showreel.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <button class="play-btn" onclick="toggleVideo('showreelVideo', this)">
+                    ▶
+                </button>
             </div>
+        </div>
 
-            <!-- SHOWREEL DESCRIPTION -->
-            <div class="work-text-block">
-                <h2>Showreel</h2>
-                <p>
-                    A collection of my strongest visual work including short films,
-                    color grading, editing, and commercial projects. Every frame is
-                    selected to represent my creative voice and technical ability.
-                </p>
-            </div>
-
+        <!-- SHOWREEL TEXT -->
+        <div class="work-text-block">
+            <h2>Showreel</h2>
+            <p>
+                A collection of my strongest visual work including short films,
+                color grading, editing, and commercial projects. Every frame is
+                selected to represent my creative voice and technical ability.
+            </p>
         </div>
 
     </div>
