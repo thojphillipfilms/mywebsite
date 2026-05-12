@@ -96,6 +96,24 @@ section {
 }
 
 /* ========================= */
+/* SECTION HEADER */
+
+.section-header {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* ========================= */
 /* ABOUT ME */
 
 .about-container {
@@ -334,6 +352,10 @@ p {
 
     h2 {
         font-size: 1.6rem;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
     }
 
     .section2,
