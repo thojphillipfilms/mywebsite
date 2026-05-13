@@ -45,6 +45,11 @@
         <h1>THROUGH MY EYES</h1>
         <p>Film Maker • Colorist • Video Editor • Content Creator</p>
     </div>
+
+    <!-- SCROLL INDICATOR -->
+    <div class="scroll-indicator" id="scrollIndicator">
+        ↓ Scroll
+    </div>
 </section>
 
 <!-- ABOUT SECTION -->
@@ -91,7 +96,6 @@
 <section id="shortfilm" class="section3">
     <div class="overlay"></div>
 
-    <!-- TOP CENTER TITLE -->
     <div class="section-header fade-section">
         <h2>My Short Film</h2>
     </div>
@@ -168,7 +172,6 @@
 <section id="projects" class="section4">
     <div class="overlay"></div>
 
-    <!-- TOP CENTER TITLE -->
     <div class="section-header fade-section">
         <h2>Other Projects</h2>
     </div>
@@ -250,6 +253,25 @@ function toggleVideo(videoId, button) {
         button.style.pointerEvents = "auto";
     }
 }
+
+/* SCROLL INDICATOR */
+window.addEventListener("DOMContentLoaded", () => {
+    const scrollIndicator = document.getElementById("scrollIndicator");
+
+    setTimeout(() => {
+        if (window.scrollY < 50) {
+            scrollIndicator.classList.add("show");
+
+            setTimeout(() => {
+                scrollIndicator.classList.remove("show");
+            }, 4000);
+        }
+    }, 3000);
+
+    window.addEventListener("scroll", () => {
+        scrollIndicator.classList.remove("show");
+    });
+});
 </script>
 
 </body>
