@@ -475,6 +475,55 @@ p {
     text-align: center;
 }
 
+
+.album-view {
+    display: none;
+
+    position: relative;
+    z-index: 10;
+
+    width: 90%;
+    max-width: 1400px;
+}
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.album-grid img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+.back-btn {
+    padding: 12px 20px;
+    margin-bottom: 30px;
+
+    border: none;
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    background: white;
+    color: black;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    transform: translateY(-2px);
+}
+
+.album-container,
+.album-view,
+.back-btn {
+    position: relative;
+    z-index: 10;
+}
 /* ========================= */
 /* MOBILE */
 @media (max-width: 768px) {
@@ -583,7 +632,4 @@ p {
         grid-template-columns: 1fr;
     }
 
-}
-
-}
 }
