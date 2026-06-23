@@ -489,11 +489,11 @@ function openAlbum(albumName) {
 
 function closeAlbum() {
 
-    document.getElementById("album-view")
-        .style.display = "none";
+    const albumView = document.getElementById("album-view");
+    const albumList = document.getElementById("album-list");
 
-    document.getElementById("album-list")
-        .style.display = "grid";
+    albumView.style.display = "none";
+    albumList.style.display = "grid";
 
 }
 </script>
