@@ -432,21 +432,31 @@ p {
     z-index: 2;
 
     width: 90%;
-    max-width: 1400px;
+    max-width: 1200px;
+
+    margin: 0 auto;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 }
 
+.section5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section5 .section-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
 .album-card {
-    cursor: pointer;
     overflow: hidden;
     border-radius: 16px;
-
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(10px);
-
+    cursor: pointer;
     transition: 0.3s;
 }
 
@@ -462,43 +472,8 @@ p {
 
 .album-card h3 {
     padding: 20px;
+    text-align: center;
 }
-
-/* ========================= */
-/* OPEN ALBUM */
-
-.album-view {
-    display: none;
-
-    position: relative;
-    z-index: 2;
-
-    width: 90%;
-    max-width: 1400px;
-}
-
-.back-btn {
-    margin-bottom: 30px;
-
-    padding: 12px 20px;
-
-    border: none;
-    border-radius: 12px;
-
-    cursor: pointer;
-}
-
-.album-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
-    gap: 20px;
-}
-
-.album-grid img {
-    width: 100%;
-    border-radius: 12px;
-}
-
 
 /* ========================= */
 /* MOBILE */
@@ -604,9 +579,11 @@ p {
         padding: 0 15px;
     }
 
-    .album-container {
+     .album-container {
         grid-template-columns: 1fr;
     }
+
+}
 
 }
 }
