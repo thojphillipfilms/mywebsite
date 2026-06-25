@@ -377,13 +377,22 @@ section {
 }
 
 /* ========================= */
-/* OVERLAY */
 .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.65);
+    z-index: 1;
 }
 
+.hero-content,
+.about-container,
+.work-container,
+.album-container,
+.album-view,
+.section-header {
+    position: relative;
+    z-index: 2;
+}
 /* ========================= */
 /* CONTENT */
 .content,
@@ -548,112 +557,105 @@ p {
 }
 
 /* ========================= */
-/* MOBILE */
-
-@media (max-width: 768px) {
-
-    .album-container {
-        grid-template-columns: 1fr;
-    }
-
-    .album-grid {
-        columns: 1;
-    }
-
-}
-}
 /* ========================= */
 /* MOBILE */
 @media (max-width: 768px) {
 
-    /* HERO CENTER */
-    .hero {
-        justify-content: center;
-        align-items: center;
-        padding-top: 0;
-    }
-
-    .hero-content {
-        margin-top: 0;
-        text-align: center;
-    }
-
-    .scroll-indicator {
-        bottom: 35px;
-        font-size: 0.8rem;
-    }
-
     /* NAV */
+
     nav {
-        flex-direction: column;
-        padding: 15px;
+        padding: 12px 10px;
+    }
+
+    .logo {
+        display: none;
     }
 
     .links {
-        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
     }
 
     .links a {
-        margin: 0 10px;
-        font-size: 0.85rem;
+        margin: 0;
+        padding: 6px 10px;
+        font-size: 0.75rem;
     }
 
-    /* GENERAL */
-    section {
-        padding: 90px 35px;
+    /* HERO */
+
+    .hero {
+        padding-top: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-content {
+        text-align: center;
+        width: 100%;
     }
 
     h1 {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
         letter-spacing: 1px;
     }
 
-    h2 {
-        font-size: 1.6rem;
-    }
+    /* ABOUT */
 
-    .section-header h2 {
-        font-size: 2rem;
-    }
-
-    .section2,
-    .section3,
-    .section4 {
-        padding-top: 80px;
-        background-position: center;
-    }
-
-    /* ABOUT MOBILE */
     .about-container {
         flex-direction: column;
         gap: 30px;
-        text-align: center;
         margin-top: 0;
+    }
+
+    .about-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .about-image img {
+        width: 100%;
+        max-width: 400px;
     }
 
     .about-text {
         text-align: center;
     }
 
-    .about-image img {
-        max-width: 280px;
-    }
+    /* SHORT FILM + PROJECTS */
 
-    /* WORK MOBILE */
     .work-container {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        width: 100%;
+        gap: 20px;
     }
 
-    .video-block,
+    .video-block {
+        width: 100%;
+    }
+
+    .video-wrapper {
+        width: 100%;
+    }
+
+    .video-wrapper video {
+        width: 100%;
+        display: block;
+    }
+
     .work-text-block {
         width: 100%;
         text-align: center;
+        margin-bottom: 35px;
     }
 
-    .work-text-block:nth-child(4) {
-        margin-top: 20px;
+    .work-text-block h2 {
+        margin-bottom: 12px;
     }
 
     .play-btn {
@@ -662,12 +664,35 @@ p {
         font-size: 1.5rem;
     }
 
-    .content {
-        padding: 0 15px;
+    /* PHOTOGRAPHY */
+
+    .album-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
-     .album-container {
-        grid-template-columns: 1fr;
+    .album-card img {
+        height: 250px;
+    }
+
+    .album-grid {
+        columns: 1;
+    }
+
+    .portrait,
+    .landscape {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    /* GENERAL */
+
+    section {
+        padding: 90px 20px;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
     }
 
 }
