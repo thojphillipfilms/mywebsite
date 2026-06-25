@@ -479,7 +479,13 @@ const albums = {
 
 };
 
+Object.values(albums).flat().forEach(photo => {
 
+    const preload = new Image();
+
+    preload.src = photo.src;
+
+});
 /* OPEN ALBUM */
 
 function openAlbum(albumName) {
@@ -497,10 +503,9 @@ function openAlbum(albumName) {
 
         img.src = photo.src;
 
-img.onerror = function() {
-    console.log("Missing image:", photo.src);
-};
-        img.loading = "lazy";
+        img.onerror = function() {
+            console.log("Missing image:", photo.src);
+        };
 
         img.classList.add(photo.type);
 
@@ -509,6 +514,7 @@ img.onerror = function() {
     });
 
 }
+
 
 
 /* CLOSE ALBUM */
