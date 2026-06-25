@@ -430,43 +430,51 @@ function toggleVideo(videoId, button) {
 const albums = {
 
     couples: [
-        "image/Cphoto1.jpg",
-        "image/Cphoto2.jpg",
-        "image/Cphotos4.jpg",
-        "image/Cphoto3.jpg",
-        "image/Cphoto5.jpg",
-        "image/Cphoto6.jpg",
-        "image/Cphoto7.jpg"
+
+        { src: "image/Cphoto1.jpg", type: "portrait" },
+        { src: "image/Cphoto2.jpg", type: "landscape" },
+        { src: "image/Cphotos4.jpg", type: "landscape" },
+        { src: "image/Cphoto3.jpg", type: "portrait" },
+        { src: "image/Cphoto5.jpg", type: "portrait" },
+        { src: "image/Cphoto6.jpg", type: "landscape" },
+        { src: "image/Cphoto7.jpg", type: "portrait" }
+
     ],
 
     uw: [
-        "image/UWphoto1.jpg",
-        "image/UWphoto2.jpg",
-        "image/UWphoto3.jpg",
-        "image/UWphoto4.jpg",
-        "image/UWphoto5.jpg",
-        "image/UWphoto6.jpg",
-        "image/UWphoto7.jpg"
+
+        { src: "image/UWphoto1.jpg", type: "portrait" },
+        { src: "image/UWphoto2.jpg", type: "landscape" },
+        { src: "image/UWphoto3.jpg", type: "landscape" },
+        { src: "image/UWphoto4.jpg", type: "portrait" },
+        { src: "image/UWphoto5.jpg", type: "portrait" },
+        { src: "image/UWphoto6.jpg", type: "landscape" },
+        { src: "image/UWphoto7.jpg", type: "portrait" }
+
     ],
 
     friends: [
-        "image/FRphoto1.jpg",
-        "image/FRphoto2.jpg",
-        "image/FRphoto3.jpg",
-        "image/FRphoto4.jpg",
-        "image/FRphoto5.jpg",
-        "image/FRphoto6.jpg",
-        "image/FRphoto7.jpg"
+
+        { src: "image/FRphoto1.jpg", type: "portrait" },
+        { src: "image/FRphoto2.jpg", type: "landscape" },
+        { src: "image/FRphoto3.jpg", type: "portrait" },
+        { src: "image/FRphoto4.jpg", type: "landscape" },
+        { src: "image/FRphoto5.jpg", type: "portrait" },
+        { src: "image/FRphoto6.jpg", type: "landscape" },
+        { src: "image/FRphoto7.jpg", type: "portrait" }
+
     ],
 
     otherphotos: [
-        "image/Ophoto1.jpg",
-        "image/Ophoto2.jpg",
-        "image/Ophoto3.jpg",
-        "image/Ophoto4.jpg",
-        "image/Ophoto5.jpg",
-        "image/Ophoto6.jpg",
-        "image/Ophoto7.jpg"
+
+        { src: "image/Ophoto1.jpg", type: "portrait" },
+        { src: "image/Ophoto2.jpg", type: "landscape" },
+        { src: "image/Ophoto3.jpg", type: "portrait" },
+        { src: "image/Ophoto4.jpg", type: "landscape" },
+        { src: "image/Ophoto5.jpg", type: "portrait" },
+        { src: "image/Ophoto6.jpg", type: "landscape" },
+        { src: "image/Ophoto7.jpg", type: "portrait" }
+
     ]
 
 };
@@ -476,23 +484,25 @@ const albums = {
 
 function openAlbum(albumName) {
 
-    document.getElementById("album-list")
-        .style.display = "none";
+    document.getElementById("album-list").style.display = "none";
+    document.getElementById("album-view").style.display = "block";
 
-    document.getElementById("album-view")
-        .style.display = "block";
-
-    const grid =
-        document.getElementById("album-grid");
+    const grid = document.getElementById("album-grid");
 
     grid.innerHTML = "";
 
     albums[albumName].forEach(photo => {
 
-        const img =
-            document.createElement("img");
+        const img = document.createElement("img");
 
-        img.src = photo;
+        img.src = photo.src;
+
+img.onerror = function() {
+    console.log("Missing image:", photo.src);
+};
+        img.loading = "lazy";
+
+        img.classList.add(photo.type);
 
         grid.appendChild(img);
 
