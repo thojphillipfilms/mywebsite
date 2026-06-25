@@ -23,15 +23,24 @@ body {
 /* BACKGROUND CROSSFADE */
 .bg-container {
     position: fixed;
-    inset: 0;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
     z-index: -2;
 }
 
 .bg-image {
     position: absolute;
-    inset: 0;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+
     opacity: 0;
     transition: opacity 1.5s ease;
 }
