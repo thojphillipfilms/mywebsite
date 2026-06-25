@@ -61,7 +61,7 @@ nav {
     align-items: center;
     z-index: 1000;
      background: rgba(0,0,0,0.25);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(6px);
 }
 
 .links a.active {
