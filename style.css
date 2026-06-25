@@ -433,7 +433,6 @@ p {
 
     width: 90%;
     max-width: 1200px;
-
     margin: 0 auto;
 
     display: grid;
@@ -453,11 +452,17 @@ p {
     margin-bottom: 50px;
 }
 
+/* Album Covers */
+
 .album-card {
     overflow: hidden;
     border-radius: 16px;
     cursor: pointer;
-    transition: 0.3s;
+
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(8px);
+
+    transition: transform 0.3s ease;
 }
 
 .album-card:hover {
@@ -468,6 +473,8 @@ p {
     width: 100%;
     height: 300px;
     object-fit: cover;
+
+    display: block;
 }
 
 .album-card h3 {
@@ -475,6 +482,7 @@ p {
     text-align: center;
 }
 
+/* Open Album */
 
 .album-view {
     display: none;
@@ -486,17 +494,31 @@ p {
     max-width: 1400px;
 }
 
+/* Masonry-style gallery */
+
 .album-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    columns: 3 300px;
+    column-gap: 20px;
 }
 
 .album-grid img {
     width: 100%;
+    margin-bottom: 20px;
+
     border-radius: 12px;
+
     display: block;
+
+    break-inside: avoid;
+
+    transition: transform 0.3s ease;
 }
+
+.album-grid img:hover {
+    transform: scale(1.02);
+}
+
+/* Back Button */
 
 .back-btn {
     padding: 12px 20px;
@@ -523,6 +545,22 @@ p {
 .back-btn {
     position: relative;
     z-index: 10;
+}
+
+/* ========================= */
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .album-container {
+        grid-template-columns: 1fr;
+    }
+
+    .album-grid {
+        columns: 1;
+    }
+
+}
 }
 /* ========================= */
 /* MOBILE */
